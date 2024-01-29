@@ -1,10 +1,10 @@
 terraform {
-  backend "s3" {
-    encrypt        = true
-    bucket         = "<BUCKET>"
-    dynamodb_table = "terraform-state-lock-dynamo"
-    key            = "learn-terraform-s3-migrate-tfc"
-    region         = "us-west-1"
+  cloud {
+    hostname = "boss-burro.zisom.sbx.hashidemos.io"
+    organization = "test-company"
+    workspaces {
+      name = "learn-terraform-migrate-s3-tfc"
+    }
   }
 
   required_providers {
